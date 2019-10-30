@@ -1,5 +1,6 @@
 package com.dmagdaleno.migrationtest.entity
 
+import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
@@ -20,5 +21,8 @@ data class Book (
         val name: String,
 
         @Size(min = 1, max = 500)
-        val synopsis: String
+        val synopsis: String,
+
+        @Column(name = "author_name")
+        val authorName: String
 )
