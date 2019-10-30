@@ -1,0 +1,9 @@
+docker build -t migration-test-db:latest docker/db/
+
+docker run --rm --name migration-test-db -d -p 5432:5432 migration-test-db
+
+docker exec -it migration-test-db bash
+
+psql -U migrationtestdbuser migration_test_db
+
+pg_dump -U postgres -s rules_db > rules_db_dump_schema.ddl
